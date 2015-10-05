@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{514976B3-1796-4DB4-97BE-8E6C1166DEB1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IRBAutomation</RootNamespace>
+    <AssemblyName>IRB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClickSeleniumFramework">
+      <HintPath>..\Portal-Selenium-Framework\shared\ClickSeleniumFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonUtilities">
+      <HintPath>..\Portal-Selenium-Framework\shared\CommonUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\SDK\Microsoft.Expression.Encoder.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin.3rdParty\NUnit.2.6.3\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PortalSeleniumFramework">
+      <HintPath>..\Portal-Selenium-Framework\shared\PortalSeleniumFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=2.47.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.2.47.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.47.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.Support.2.47.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\EntityClonerUtil.cs" />
+    <Compile Include="IRBStore\ActionsNav.cs" />
+    <Compile Include="IRBStore\AddAncillaryReview.cs" />
+    <Compile Include="IRBStore\AddComments.cs" />
+    <Compile Include="IRBStore\AddRelatedGrant.cs" />
+    <Compile Include="IRBStore\AssignCoordinator.cs" />
+    <Compile Include="IRBStore\AssignDesignatedReviewer.cs" />
+    <Compile Include="IRBStore\AssignIRB.cs" />
+    <Compile Include="IRBStore\AssignPIProxyPopup.cs" />
+    <Compile Include="IRBStore\AssignPrimaryContact.cs" />
+    <Compile Include="IRBStore\AssignToMeetingPopup.cs" />
+    <Compile Include="IRBStore\ConfirmCredentialsPopup.cs" />
+    <Compile Include="IRBStore\CopySubmission.cs" />
+    <Compile Include="IRBStore\CreateNewMeeting.cs" />
+    <Compile Include="IRBStore\FilterComponent.cs" />
+    <Compile Include="IRBStore\FinalizeDocuments.cs" />
+    <Compile Include="IRBStore\FundingSources.cs" />
+    <Compile Include="IRBStore\Inbox.cs" />
+    <Compile Include="IRBStore\IRBProjectLog.cs" />
+    <Compile Include="IRBStore\IRBSubmissions.cs" />
+    <Compile Include="IRBStore\ManageAncillaryReviews.cs" />
+    <Compile Include="IRBStore\ManageGuestList.cs" />
+    <Compile Include="IRBStore\InitialModCRSmartForm.cs" />
+    <Compile Include="IRBStore\Popups\AddAttachmentPopup.cs" />
+    <Compile Include="IRBStore\Popups\AddReviewCommentsPopup.cs" />
+    <Compile Include="IRBStore\Popups\AddStudyTeamMemberPopup.cs" />
+    <Compile Include="IRBStore\Popups\AssignToCommitteReview.cs" />
+    <Compile Include="IRBStore\Popups\ClarificationRequestPopup.cs" />
+    <Compile Include="IRBStore\Popups\CommonControls.cs" />
+    <Compile Include="IRBStore\Popups\ConfirmExternalIRBPopup.cs" />
+    <Compile Include="IRBStore\Popups\DiscardPopup.cs" />
+    <Compile Include="IRBStore\Popups\FinalizeDocumentsPopup.cs" />
+    <Compile Include="IRBStore\Popups\RequestClarificationByCommitteeMemberPopup.cs" />
+    <Compile Include="IRBStore\Popups\ReviewRequiredActionsPopup.cs" />
+    <Compile Include="IRBStore\Popups\ReviewRequiredModificationsPopup.cs" />
+    <Compile Include="IRBStore\Popups\SubmitActionResponsePopup.cs" />
+    <Compile Include="IRBStore\Popups\SubmitCommitteeReviewPopup.cs" />
+    <Compile Include="IRBStore\Popups\SubmitRNICommitteeReviewPopup.cs" />
+    <Compile Include="IRBStore\Popups\UpdateExternalIRBStatusPopup.cs" />
+    <Compile Include="IRBStore\PrepareLetterPopup.cs" />
+    <Compile Include="IRBStore\SubmitPreReviewPopup.cs" />
+    <Compile Include="IRBStore\RequestPreReviewClarificationPopup.cs" />
+    <Compile Include="IRBStore\RNISmartform.cs" />
+    <Compile Include="IRBStore\SendLetterPopup.cs" />
+    <Compile Include="IRBStore\IRBWorkspace.cs" />
+    <Compile Include="IRBStore\SubmitDesignatedReview.cs" />
+    <Compile Include="IRBStore\SubmitResponsePopup.cs" />
+    <Compile Include="IRBStore\SubmitDesignatedRNIReviewPopup.cs" />
+    <Compile Include="IRBStore\SubmitRNIPreReview.cs" />
+    <Compile Include="IRBStore\SubmitPopup.cs" />
+    <Compile Include="IRBStore\Terminate.cs" />
+    <Compile Include="IRBStore\Users.cs" />
+    <Compile Include="IRBStore\WithdrawPopup.cs" />
+    <Compile Include="TestCases\CRSystemTests.cs" />
+    <Compile Include="TestCases\InitialStudySystemTests.cs" />
+    <Compile Include="TestCases\MODCRSystemTests.cs" />
+    <Compile Include="TestCases\ModificationSystemTests.cs" />
+    <Compile Include="TestCases\MiscTests.cs" />
+    <Compile Include="Helpers\ClickPortalUI.cs" />
+    <Compile Include="IRBStore\InitialStudySmartForm.cs" />
+    <Compile Include="IRBStore\StudyScope.cs" />
+    <Compile Include="IRBStore\ActivitiesNav.cs" />
+    <Compile Include="IRBStore\NewSubmissionSmartform.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\RNIActivities.cs" />
+    <Compile Include="TestCases\RNISystemTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AutoConfig.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
